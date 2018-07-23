@@ -115,3 +115,6 @@ function pintarAzul(){
 function correr(){
     sonic.style.transform = "translateX(1000px) scale(0.1)";
 }
+
+// ------------------- Aula da Tarde -------------------
+
