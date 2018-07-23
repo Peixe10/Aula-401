@@ -32,14 +32,19 @@ for (let i=0;i<numeros.length;i++){
 let botao = document.querySelector('button');
 
 function mudarCorDeFundo(){
-    document.body.style.backgroundColor = 'green';
+    if (document.body.style.backgroundColor!="green"){
+        document.body.style.backgroundColor="green";
+    }
+    else if(document.body.style.backgroundColor!="red"){
+        document.body.style.backgroundColor="red";
+    }
 }
 
 botao.addEventListener('click', mudarCorDeFundo);
 
 /*CLICAR NO SONIC E ELE CORRER*/
 
-let sonic = document.querySelector('#sonic');
+let sonic = document.querySelector('#sonic'); //Seleciona o elemento com a ID sonic e fornece a variável SOnic 
 
 sonic.addEventListener('click',andar);
 
@@ -47,3 +52,22 @@ function andar(){
     sonic.style.transform = 'translateX(1000px) scale(0.1)';
     setTimeout(mudarCorDeFundo, 3500)
 }
+
+// CRIANDO O FORMULÁRIO
+
+/* Seleção das variáveis */
+
+let inputNome = document.querySelector('#input-nome');
+let inputEmail = document.querySelector('#input-email');
+let inputMensagem = document.querySelector('#input-mensagem');
+let botao = document.querySelector('button');
+let caixa = document.querySelector('div')
+
+botao.addEventListener('click', function(){
+    caixa.innerHTML = `
+    <p>Nome: ${inputNome.value}</p>
+    <p>Email: ${inputEmail.value}</p>
+    <p>Mensagem: ${inputMensagem.value}</p>`;
+});
+
+// texto
